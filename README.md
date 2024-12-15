@@ -1,5 +1,43 @@
-# CliffBoxPushing-Game
-This project centers around the implementation and evaluation of a Reinforcement Learning (RL) algorithm, such as Q-learning or SARSA, to solve the challenging CliffBoxPushing grid-world game. The grid-world environment, depicted in Figure 1, poses a complex scenario where an agent must navigate to push a box to a goal position while avoiding dangerous cliffs. The project encourages novel implementations and ideas, offering bonus credit for creative solutions. The implementation involves coding the RL algorithm and presenting a convincing demonstration through a presentation. Relevant resources from OpenAI Spinning Up are recommended for gaining insights into current RL algorithms.
-The 2D grid world is a 6x14 space, where the agent (A), box (B), goal (G), and cliffs (x) are positioned. The RL agent needs to learn to push the box to the goal, considering the game's termination conditions: stepping into the cliff, reaching the maximum time step, or successfully moving the box to the goal. The Markov Decision Process (MDP) formulation includes states, actions, rewards, and transitions. States represent the positions of the agent and box, actions correspond to up, down, left, or right movements, and rewards encompass various factors such as timestep penalties, distance penalties, and cliff-related rewards. Transitions are managed by the step() function in the environment
+# CliffBoxPushing Grid Game Using Reinforcement Learning
 
-![CliffBoxPushing Grid World](https://github.com/Thanya727/CliffBoxPushing-Game/assets/77052671/25b57404-5b04-4376-856e-34912b73d38a)
+This project implements a CliffBoxPushing grid game using various reinforcement learning algorithms. The focus is on exploring Q-learning, SARSA, and UCB (Upper Confidence Bound) methods to solve sequential decision-making problems in a Markov Decision Process (MDP).
+
+## Features
+
+- **Q-Learning**: Implements the off-policy Q-Learning algorithm for optimizing actions in an MDP.
+- **SARSA**: Explores the on-policy SARSA algorithm for learning state-action value functions.
+- **UCB**: Utilizes the Upper Confidence Bound algorithm for addressing exploration-exploitation trade-offs.
+- **Visualization**: Generates value and policy tables to understand the agent's decision-making process.
+
+## Prerequisites
+
+- Python 3.8 or higher
+- Libraries: `numpy`, `matplotlib`
+
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/ThanyaRamanathan/CliffBoxPushing-Game.git
+
+2. Install requirements:
+   ```bash
+   pip install -r requirements.txt
+
+## Outputs
+- Value Tables: Show estimated cumulative rewards for states.
+- Policy Tables: Represent the optimal policy derived from the algorithms.
+- Performance Metrics: Track convergence and learning efficiency.
+
+## Inferences
+- Q-Learning vs. SARSA:
+  - Q-Learning learns faster due to its off-policy nature, achieving positive rewards within 10,000 episodes.
+  - SARSA, being on-policy, takes a more cautious approach, requiring 25,000 episodes for similar performance.
+- UCB Advantages:
+  - Balances exploration and exploitation dynamically.
+  - Provides faster convergence in uncertain environments compared to ε-greedy strategies.
+
+## Improvements
+- Implement Deep Q-Networks (DQNs) for high-dimensional state spaces.
+- Explore hybrid approaches combining Q-Learning and UCB.
+- Integrate adaptive exploration strategies.
